@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Карта изображений</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img src="photo-output%20(1)%20(1).jpg" usemap="#imageMap" alt="фото Никиты">
+<map id="map" name="imageMap">
+    <area shape="rect" alt="" title="" coords="381,361,632,394" href="oreder.html" target="" />
+    <area shape="rect" alt="" title="" coords="620,405,883,593" onclick="addSpiner()" target="" />
+    <area shape="rect" alt="" title="" coords="474,229,531,274" href="https://intan.ru/" target="_blank" />
+    <area shape="rect" alt="" title="" coords="127,366,267,433" onclick="addIFrame()" />
+    <area shape="circle" alt="" title="" coords="495,129,67" onclick="dedFunction()" />
+
+</map>
+<img src="photo%20(2)%20(2).jpg" class="ded" style="display: none">
+<div class="spin-wrapper">
+</div>
+</body> 
+<script>
+    const  siteMap = document.querySelector('map')
+    const spiner = document.querySelector('.spin-wrapper')
+    const addSpiner = () =>{
+        const div = document.createElement('div');
+        div.className='spinner'
+        spiner.append(div)
+    }
+    const addIFrame = () =>{
+        const iFrame = document.createElement('iframe');
+        iFrame.src='banNYKCn-88_360p_YouTube.mp4'
+        iFrame.className='video'
+        siteMap.after(iFrame)
+        setTimeout(()=>{
+            iFrame.remove()
+        }, 2400)
+    }
+    const dedFunction = ()=>{
+        const ded = document.querySelector('.ded')
+        ded.style.display='block'
+        setTimeout(()=>{
+            ded.style.display='none'
+        }, 500)
+    }
+</script>
+</html>
