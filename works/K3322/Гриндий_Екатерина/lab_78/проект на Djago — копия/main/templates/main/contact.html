@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Обратная связь{% endblock %}
+
+{% block content %}
+<div class="contact-form">
+    <h1 class="page-title">Обратная связь</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+            <div class="alert alert-danger">
+                {{ field.errors }}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn">Отправить</button>
+    </form>
+</div>
+{% endblock %} 

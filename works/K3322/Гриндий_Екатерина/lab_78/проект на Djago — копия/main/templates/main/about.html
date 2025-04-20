@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}О разработке{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1 class="page-title">О разработке</h1>
+    <div class="card-content">
+        <h2 class="card-title">Технологии</h2>
+        <p>
+            Этот сайт разработан с использованием следующих технологий:
+        </p>
+        <ul>
+            <li>Django - веб-фреймворк на Python</li>
+            <li>HTML5 и CSS3 - для структуры и стилей</li>
+            <li>SQLite - для хранения данных</li>
+        </ul>
+        
+        <div class="image-container">
+            <img src="{% static 'main/images/Django-The-Python-Web-Framework.jpg' %}" alt="Технологии разработки">
+            <div class="image-caption">Используемые технологии в разработке</div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
